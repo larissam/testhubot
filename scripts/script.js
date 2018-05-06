@@ -13,9 +13,9 @@
 module.exports = function(robot) {
   //  YOUR CODE HERE
   //  Example
-  //  robot.hear(/javascript/i, function(msg) {
-  //    return msg.send("I love writing code!");
-  //  });
+   robot.hear(/javascript/i, function(msg) {
+     return msg.send("I love writing code!");
+   });
 }
 
 /************************************
