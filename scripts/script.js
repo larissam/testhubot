@@ -16,6 +16,12 @@ module.exports = function(robot) {
    robot.hear(/javascript/i, function(msg) {
      return msg.send("I love writing code!");
    });
+   robot.hear(/debug/i, function(msg) {
+      console.log('robot adapter rtm client: ', robot.adapter.client.rtm.dataStore.users);
+     const users = robot.adapter.client.rtm.dataStore.users;
+     const processedUsers = Object.values(users).filter((user) => user.name);
+     return msg.send("debugging: ", processedUsers.join(', '));
+   });
 }
 
 /************************************
